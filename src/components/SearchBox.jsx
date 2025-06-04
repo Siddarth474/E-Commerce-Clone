@@ -10,13 +10,16 @@ const SearchBox = () => {
     const [searchTerm, setSearchTerm] = useState('');
 
     const handleSearch = () => {
-        const filteredResult = allProducts.filter(product => {
-            return product.title.toLowerCase().includes(searchTerm.toLowerCase());
-        });
+      if(searchTerm === '') return;
 
-        if(!filteredResult.length) return;
-        return navigate(`/product/${filteredResult[0].id}` , {state: {item : filteredResult[0]}});
+      const filteredResult = allProducts.filter(product => {
+          return product.title.toLowerCase().includes(searchTerm.toLowerCase());
+      });
+
+      if(!filteredResult.length) return;
+      return navigate(`/product/${filteredResult[0].id}` , {state: {item : filteredResult[0]}});
     }
+    
   return (
     <div className='w-full sm:hidden bg-white flex justify-center items-center'>
         <div className='flex items-center max-w-[400px] w-full gap-2 bg-white mx-5 my-2

@@ -14,6 +14,8 @@ const Navbar = () => {
     const [searchTerm, setSearchTerm] = useState('');
 
     const handleSearch = () => {
+        if(searchTerm === '') return;
+        
         const filteredResult = allProducts.filter(product => {
             return product.title.toLowerCase().includes(searchTerm.toLowerCase());
         });
