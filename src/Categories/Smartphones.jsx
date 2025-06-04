@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import { CategoryContext } from '../context/Context';
 import Card from '../components/Card';
-import FilterNavBar from '../components/filterNavBar';
+import FilterNavBar from '../components/FilterNavBar';
 import {useNavigate} from 'react-router'
 
 const Smartphones = () => {

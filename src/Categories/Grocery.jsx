@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import FilterNavBar from '../components/filterNavBar';
+import FilterNavBar from '../components/FilterNavBar';
 import Card from '../components/Card';
 import {useNavigate} from 'react-router'
 import { CategoryContext } from '../context/Context';
