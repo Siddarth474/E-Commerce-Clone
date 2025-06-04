@@ -1,12 +1,44 @@
-# React + Vite
+# 🛒 Flipkart Clone - React.js
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A fully responsive **Flipkart Clone** built using **React.js**, mimicking core e-commerce features like product browsing, cart management, wishlist, and responsive design.
 
-Currently, two official plugins are available:
+> ⚡ Built with performance, modularity, and user experience in mind!
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 🔥 Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- ✅ Product Listing by Categories (Smartphones, Men's Fashion, Home Decoration)
+- 🛒 Add to Cart functionality
+- ❤️ Add/Remove from Wishlist
+- 💾 Cart Persistence with LocalStorage (Products stay even after page refresh)
+- 📦 Product Detail Pages with Dynamic Routing
+- 🔍 Sort by Price & Ratings (High-Low, Low-High)
+- 📱 Fully Responsive Design
+- ⚛️ React Context API for State Management
+- ⚡ Clean and Interactive UI (Tailwind CSS)
+
+---
+
+## 🚀 Tech Stack
+
+- **React.js**
+- **React Router v6**
+- **Tailwind CSS**
+- **Context API**
+- **LocalStorage API**
+- **DummyJSON API** (for product data)
+
+---
+
+🙌 Acknowledgements
+-- DummyJSON for free product APIs
+-- Flipkart for the UI inspiration
+-- OpenAI for constant coding support 😄
+
+🧑‍💻 Author
+Siddharth
+CS Student & Aspiring Web Developer
+GitHub Profile
+
+
