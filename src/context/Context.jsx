@@ -1,4 +1,4 @@
-import { createContext,useEffect,useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import { getFurniture, getGrocery, getHomeDecoration, getLaptops, getMen_Shirts, getSmartphones } from "../ProductApi";
 
 export const CategoryContext = createContext();
@@ -18,6 +18,8 @@ const CategoryContextProvider = (props) => {
     const [isInitialized , setIsInitialized ] = useState(true);
     const [showModel, setShowModel] = useState(false);
     const [isDelete, setIsDelete] = useState(null);
+    const allProducts = [...menShirts, ...smartphones, ...decoration, ...laptops, ...furniture, ...grocery];
+
 
     useEffect(() => {
         const fetchAllData = async () => {
@@ -70,7 +72,8 @@ const CategoryContextProvider = (props) => {
         wishlist, setWishlist,
         sortedList, setSortedList,
         isDelete, setIsDelete,
-        showModel, setShowModel
+        showModel, setShowModel,
+        allProducts
     }
 
     return (

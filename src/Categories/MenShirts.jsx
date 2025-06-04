@@ -13,11 +13,13 @@ const MenShirts = () => {
         <section className='w-full text-black'>
             <FilterNavBar title={'Fashion'} list={menShirts} />
             <div className='bg-white  flex flex-col gap-5 overflow-auto'>
-                {sortedList.map((product) => (
-                    <div key={product.id} onClick={() => {navigate(`/product/${product.id}` , {state: {item : product}})}}>
+                {sortedList.map((product) => {
+                    const urlSafe = product.title.toLowerCase().replace(/\s+/g, '-');
+
+                    return <div key={product.id} onClick={() => {navigate(`/product/${urlSafe}` , {state: {item : product}})}}>
                        <Card item={product}  warranty={'6 Months'} />
                     </div>
-                ))}
+                })}
             </div>
         </section>
     </div>

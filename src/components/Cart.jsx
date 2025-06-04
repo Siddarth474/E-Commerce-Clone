@@ -12,7 +12,7 @@ const Cart = () => {
         const calculatedTotal = cartProducts.reduce((acc,item) => {
             const ActualPrice = Math.floor(item.price * 85);
             const discounted = Math.floor(ActualPrice - (ActualPrice * (item.discountPercentage / 100))); 
-            return acc + (discounted * item.quantity); 
+            return acc + (discounted * item.quantity);
         }, 0);
 
         setTotal(calculatedTotal);
@@ -45,10 +45,11 @@ const Cart = () => {
             { cartProducts.map((product) => {
                 const Realprice = Math.floor(product.price * 85);
                 const discount = Realprice * (product.discountPercentage / 100);
-                const discountedPrice = Math.floor(Realprice - discount); 
+                const discountedPrice = Math.floor(Realprice - discount);
+                const urlSafe = product.title.toLowerCase().replace(/\s+/g, '-'); 
 
                 return <div key={product.id} className='border-b border-gray-300 p-4'>
-                    <div onClick={() => {navigate(`/product/${product.id}`, {state: {item : product}})}}
+                    <div onClick={() => {navigate(`/product/${urlSafe}`, {state: {item : product}})}}
                     className='flex flex-col justify-between md:flex-row mb-4'>
                         <div className='flex'>
                             <img src={product.thumbnail} className='w-[120px] h-[120px] sm:w-[200px] sm:h-[200px]' />

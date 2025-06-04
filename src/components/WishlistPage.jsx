@@ -22,9 +22,10 @@ const WishlistPage = () => {
                 let Realprice = Math.floor(Item.price * 85);
                 let discount = Realprice * (Item.discountPercentage / 100);
                 let discountedPrice = Math.floor(Realprice - discount); 
+                let urlSafe = Item.title.toLowerCase().replace(/\s+/g, '-');
 
                 return <div key={Item.id} className='flex justify-between gap-2 p-3 border-b border-gray-400 mb-3'>
-                    <div className='flex gap-3' onClick={() => {navigate(`/product/${Item.id}`, {state: {item : Item}})}}>
+                    <div className='flex gap-3' onClick={() => {navigate(`/product/${urlSafe}`, {state: {item : Item}})}}>
                         <img src={Item.thumbnail} className='w-[110px] h-[110px]  sm:w-[150px] sm:h-[150px] 
                         border-gray-400 rounded-sm' />
                         <div className='max-w-[700px] col-span-3'> 
@@ -52,7 +53,7 @@ const WishlistPage = () => {
             { wishlist.length === 0 && 
                 ( <div className='flex bg-white w-full sm:mt-2 h-[150px] items-center 
                 justify-center rounded-lg flex-col p-4 gap-5'>
-                    <h1 className='text-lg sm:text-2xl font-semibold'>Wishlist is Empty!</h1>
+                    <h1 className='text-xl sm:text-2xl font-semibold'>Wishlist is Empty!</h1>
                 </div> )
             } 
     </div>

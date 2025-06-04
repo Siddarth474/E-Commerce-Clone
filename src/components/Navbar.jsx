@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import flipkart_logo from '../assets/flipkart-logo-png-transparent.png'
 import { IoIosSearch } from "react-icons/io";
 import { HiOutlineUserCircle } from "react-icons/hi2";
@@ -10,7 +10,18 @@ import { CategoryContext } from '../context/Context';
 
 const Navbar = () => {
     const navigate = useNavigate();
-    const {cartProducts, } = useContext(CategoryContext);
+    const {cartProducts, allProducts} = useContext(CategoryContext);
+    const [searchTerm, setSearchTerm] = useState('');
+
+    const handleSearch = () => {
+        const filteredResult = allProducts.filter(product => {
+            return product.title.toLowerCase().includes(searchTerm.toLowerCase());
+        });
+
+        if(!filteredResult.length) return;
+        return navigate(`/product/${filteredResult[0].id}` , {state: {item : filteredResult[0]}});
+    }
+    
 
   return (
     <nav className='w-full flex items-center bg-white text-black p-3 justify-between gap-2 sm:gap-4 '>
@@ -19,7 +30,12 @@ const Navbar = () => {
             className='cursor-pointer w-[100px] sm:w-[150px] ml-2 ' />
             <div className='hidden sm:flex items-center gap-3 py-2 px-3 bg-blue-100  w-full rounded-md '>
                 <IoIosSearch className='w-7 h-7 text-gray-500' />
-                <input type='text' placeholder='Search for Products, Brands & More' 
+                <input type='text' value={searchTerm} 
+                onChange={(e) => setSearchTerm(e.target.value)}
+                onKeyDown={(e) => {
+                    if (e.key === 'Enter') handleSearch();
+                }}
+                placeholder='Search for Products, Brands & More' 
                 className='text-[18px] w-full outline-0' />
             </div>
         </div>
