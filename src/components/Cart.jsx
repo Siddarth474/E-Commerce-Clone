@@ -77,7 +77,7 @@ const Cart = () => {
 
                     <div>
                         <div className='flex items-center gap-3 mt-5 ml-3'>
-                            <button onClick={() => decreement(item.id)}
+                            <button onClick={() => decreement(product.id)}
                             className='w-8 h-8 text-[17px] sm:text-[20px] flex items-center justify-center 
                             rounded-full font-semibold border border-gray-400 cursor-pointer'> - </button>
 
